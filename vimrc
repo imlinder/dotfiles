@@ -17,8 +17,7 @@ set background=dark
 
 colorscheme base16-ocean
 
-"Open NERDTree with ctrl+n
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR> "Open NERDTree with ctrl+n
 
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
