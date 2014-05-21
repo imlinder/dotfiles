@@ -1,6 +1,9 @@
 execute pathogen#infect()
 
 set number        "Turn on line numbering
+set cursorline    "Highlight current line
+set scrolloff=3   "Minimum lines to keep above and below cursor
+
 
 syntax on
 
