@@ -4,7 +4,6 @@ set number        "Turn on line numbering
 set cursorline    "Highlight current line
 set scrolloff=3   "Minimum lines to keep above and below cursor
 
-
 syntax on
 
 if $TERM == "xterm-256color"
@@ -32,6 +31,10 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-
 imap jk <Esc>
 imap jj <Esc>
+
+" ================ Turn Off Swap Files ==============
+set noswapfile
+set nobackup
+set nowb
