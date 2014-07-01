@@ -1,0 +1,26 @@
+{
+  "name": "base16-ocean-dark",
+  "theme": "syntax",
+  "version": "0.3.0",
+  "description": "Base16 Ocean Dark Color Syntax",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robbschiller/base16-ocean-dark"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "readme": "# base16-ocean-dark theme\n\nBase16 Ocean Dark Syntax Theme for Atom. Matches the color scheme to the Atom Syntax Generator boilerplate.\n\n![Screenshot](http://f.cl.ly/items/152w2k1q1H210x1j2S0O/Screen%20Shot%202014-02-28%20at%2012.33.13%20PM.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/robbschiller/base16-ocean-dark/issues"
+  },
+  "homepage": "https://github.com/robbschiller/base16-ocean-dark",
+  "_id": "base16-ocean-dark@0.3.0",
+  "dist": {
+    "shasum": "b7f8e12cf98d934b5a3a18415969ce188c948871"
+  },
+  "_resolved": "/var/folders/1z/nn7y6l3n2cdcfx7_4w7kjkfh0000gp/T/d-114530-31003-1sgclvf/package.tgz",
+  "_from": "/var/folders/1z/nn7y6l3n2cdcfx7_4w7kjkfh0000gp/T/d-114530-31003-1sgclvf/package.tgz"
+}
