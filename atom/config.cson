@@ -1,9 +1,14 @@
 'editor':
-  'fontSize': 16
+  'fontSize': 13
+  'lineHeight': 1.4
+  'fontFamily': 'Source Code Pro'
 'core':
   'themes': [
     'atom-dark-ui'
-    'atom-dark-syntax'
+    'base16-ocean-dark'
+  ]
+  'disabledPackages': [
+    'background-tips'
   ]
 'exception-reporting':
   'userId': 'b32cb661-a80d-12cd-653d-fa8243a4db9f'
