@@ -16,3 +16,6 @@
   'showOnStartup': false
 'metrics':
   'userId': '8a91815e1f7f47cd08a90e7683fc5eb0f2799620'
+'scroll-past-end': {}
+'autocomplete-plus':
+  'autoActivationDelay': 0
