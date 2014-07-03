@@ -9,6 +9,7 @@
   ]
   'disabledPackages': [
     'background-tips'
+    'feedback'
   ]
 'exception-reporting':
   'userId': 'b32cb661-a80d-12cd-653d-fa8243a4db9f'
@@ -21,3 +22,4 @@
   'autoActivationDelay': 0
 'highlight-line':
   'opacity': '10%'
+'atom-spotify': {}
