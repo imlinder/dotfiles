@@ -4,7 +4,7 @@
   'fontFamily': 'Source Code Pro'
 'core':
   'themes': [
-    'atom-dark-ui'
+    'seti-ui'
     'base16-ocean-dark'
   ]
   'disabledPackages': [
@@ -19,3 +19,5 @@
 'scroll-past-end': {}
 'autocomplete-plus':
   'autoActivationDelay': 0
+'highlight-line':
+  'opacity': '10%'
