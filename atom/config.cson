@@ -1,15 +1,17 @@
 'editor':
-  'fontSize': 13
+  'fontSize': 12
   'lineHeight': 1.4
   'fontFamily': 'Source Code Pro'
 'core':
   'themes': [
     'seti-ui'
-    'base16-ocean-dark'
+    'no-caffeine-syntax'
   ]
   'disabledPackages': [
     'background-tips'
     'feedback'
+    'vim-mode'
+    'linter-scss-lint'
   ]
 'exception-reporting':
   'userId': 'b32cb661-a80d-12cd-653d-fa8243a4db9f'
