@@ -4,8 +4,8 @@
   'fontFamily': 'Source Code Pro'
 'core':
   'themes': [
-    'seti-ui'
-    'no-caffeine-syntax'
+    'atom-light-ui'
+    'base16-ocean-light-syntax'
   ]
   'disabledPackages': [
     'background-tips'

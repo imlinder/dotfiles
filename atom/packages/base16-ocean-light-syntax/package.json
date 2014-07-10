@@ -1,0 +1,26 @@
+{
+  "name": "base16-ocean-light-syntax",
+  "theme": "syntax",
+  "version": "0.1.0",
+  "description": "Base16 Ocean Light syntax theme for Atom.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nemoDreamer/atom-base16-ocean-light-syntax"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "readme": "# Base16 Ocean Light syntax theme for Atom.\n\nI noticed that nobody had shared the light version of this for Atom yet, so\nhere it is.\n\n![Base16 Ocean Light syntax theme screenshot](http://res.cloudinary.com/nemodreamer/image/upload/c_scale,r_2,w_800/v1400254157/base16-ocean-light-screenshot_ecfxb8.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/nemoDreamer/atom-base16-ocean-light-syntax/issues"
+  },
+  "homepage": "https://github.com/nemoDreamer/atom-base16-ocean-light-syntax",
+  "_id": "base16-ocean-light-syntax@0.1.0",
+  "dist": {
+    "shasum": "b6429073e21ed2eca02198546e5f6fbd514f2a41"
+  },
+  "_resolved": "/var/folders/1z/nn7y6l3n2cdcfx7_4w7kjkfh0000gp/T/d-114610-21620-scihrl/package.tgz",
+  "_from": "/var/folders/1z/nn7y6l3n2cdcfx7_4w7kjkfh0000gp/T/d-114610-21620-scihrl/package.tgz"
+}
