@@ -32,6 +32,8 @@ set shiftwidth=2
 set expandtab
 
 imap jk <Esc>
+imap kj <Esc>
+imap kk <Esc>
 imap jj <Esc>
 
 " ================ Turn Off Swap Files ==============
