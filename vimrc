@@ -21,8 +21,6 @@ set background=dark
 
 colorscheme base16-ocean
 
-map <C-n> :NERDTreeToggle<CR> "Open NERDTree with ctrl+n
-
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
