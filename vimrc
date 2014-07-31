@@ -7,6 +7,8 @@ set cursorline    "Highlight current line
 set scrolloff=3   "Minimum lines to keep above and below cursor
 
 syntax on
+set background=dark
+colorscheme molokai
 
 if $TERM == "xterm-256color"
   set t_Co=256
@@ -17,9 +19,9 @@ if has('gui_running')
   set guifont=Source\ Code\ Pro\ Light:h14
 endif
 
-set background=dark
-
-colorscheme base16-ocean
+" highlight search pattern
+set hlsearch
+hi Search guibg=#FBB829 guifg=black
 
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
@@ -36,12 +38,17 @@ imap kj <Esc>
 imap kk <Esc>
 imap jj <Esc>
 
+" Keep cursor in the center when moving to next/previous search match.
+nnoremap n nzz
+nnoremap N Nzz
+
+" Dont move on *
+nnoremap * *<c-o>
+
 " ================ Turn Off Swap Files ==============
 set noswapfile
 set nobackup
 set nowb
-
-
 
 " ================ Status Line ======================
 
