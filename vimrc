@@ -1,22 +1,30 @@
 execute pathogen#infect()
 
-set shortmess+=I  "Remove startup message
+"Reload vimrc when saved
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
 
+let mapleader=" "
+
+set nocompatible
+set shortmess+=I  "Remove startup message
 set number        "Turn on line numbering
 set cursorline    "Highlight current line
 set scrolloff=3   "Minimum lines to keep above and below cursor
+set nowrap        "Turn off line wrapping
 
+" Color scheme
 syntax on
 set background=dark
 colorscheme molokai
+let &t_Co=256
 
-if $TERM == "xterm-256color"
-  set t_Co=256
-endif
-
+" Font
 if has('gui_running')
   set anti enc=utf-8
-  set guifont=Source\ Code\ Pro\ Light:h14
+  set guifont=Source\ Code\ Pro\ Light:h12
 endif
 
 " highlight search pattern
@@ -28,35 +36,47 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
+" Indentation
 set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Easy escape from insert mode.
 imap jk <Esc>
-imap kj <Esc>
-imap kk <Esc>
 imap jj <Esc>
 
-" Keep cursor in the center when moving to next/previous search match.
+"quickly open netrw
+noremap <Leader>. :vspl. <Enter>
+noremap <Leader>: :spl. <Enter>
+
+"Save file as sudo even if not opened as such
+cmap w!! w !sudo tee > /dev/null %
+
+"Keep cursor in the center when moving to next/previous search match.
 nnoremap n nzz
 nnoremap N Nzz
 
-" Dont move on *
+"Dont move on *
 nnoremap * *<c-o>
 
-" ================ Turn Off Swap Files ==============
+"Turn Off Swap Files
 set noswapfile
 set nobackup
 set nowb
 
-" ================ Status Line ======================
+"Status line
+hi User1 guibg=#84CD22  guifg=white ctermbg=green
+hi User2 guibg=#FF0952  guifg=white ctermbg=red
 
-set laststatus=2
+set laststatus=2 "Always show statusline
+
 set statusline=
-set statusline+=%<\                       " cut at start
-set statusline+=%2*[%n%H%M%R%W]%*\        " flags and buf no
-set statusline+=%-40f\                    " path
-set statusline+=%=%1*%y%*%*\              " file type
-set statusline+=%10((%l,%c)%)\            " line and column
-set statusline+=%P   
+set statusline+=\ %m%r%h%w  "Modified, readonly, help, preview 
+set statusline+=\ %.40F\    "Filepath with maximum width
+set statusline+=%=          "Right align
+set statusline+=%1*         "Color 1
+set statusline+=\ %Y        "Filetype
+set statusline+=\ %2*       "Color 2
+set statusline+=\ %l/%L\    "Current/total lines
+
