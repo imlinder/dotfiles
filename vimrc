@@ -46,9 +46,13 @@ set expandtab
 imap jk <Esc>
 imap jj <Esc>
 
-"quickly open netrw
+" Quickly open netrw
 noremap <Leader>. :vspl. <Enter>
 noremap <Leader>: :spl. <Enter>
+
+" Datestamp
+inoremap <F5> <C-R>=strftime("%c")<CR>
+nnoremap <F5> "=strftime("%c")<CR>P
 
 "Save file as sudo even if not opened as such
 cmap w!! w !sudo tee > /dev/null %
