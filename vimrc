@@ -70,6 +70,18 @@ set nobackup
 set nowb
 
 "Status line
+function! FileSize()
+let bytes = getfsize(expand("%:p"))
+if bytes <= 0
+return ""
+endif
+if bytes < 1024
+return bytes
+else
+return (bytes / 1024) . "k"
+endif
+endfunction
+
 hi User1 guibg=#84CD22  guifg=white ctermbg=green
 hi User2 guibg=#FF0952  guifg=white ctermbg=red
 
@@ -79,7 +91,8 @@ set statusline=
 set statusline+=\ %m%r%h%w  "Modified, readonly, help, preview 
 set statusline+=\ %.40F\    "Filepath with maximum width
 set statusline+=%=          "Right align
-set statusline+=%1*         "Color 1
+set statusline+=%{FileSize()}
+set statusline+=\ %1*       "Color 1
 set statusline+=\ %Y        "Filetype
 set statusline+=\ %2*       "Color 2
 set statusline+=\ %l/%L\    "Current/total lines
