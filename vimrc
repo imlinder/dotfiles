@@ -3,7 +3,7 @@ set nocompatible
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin('~/.vim/bundle/plugins')
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
