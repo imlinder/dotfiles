@@ -107,8 +107,3 @@ set statusline+=\ %Y        "Filetype
 set statusline+=\ %2*       "Color 2
 set statusline+=\ %l/%L\    "Current/total lines
 
-
-
-
-" Scss
-" au BufRead,BufNewFile *.scss set filetype=scss.css
