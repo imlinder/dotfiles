@@ -1,40 +1,17 @@
 set nocompatible
-"{{{ Vundle
-
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.vim/bundle/plugins')
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'cakebaker/scss-syntax.vim'
-
-call vundle#end()
-filetype plugin indent on
-
-"}}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 "Reload vimrc when saved
 augroup reload_vimrc " {
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
+
+source ~/.vim/bundles.vim
+
+filetype on
+filetype plugin on
+filetype indent on
+
 
 let mapleader=" "
 
