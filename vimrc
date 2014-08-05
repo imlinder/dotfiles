@@ -1,4 +1,39 @@
-execute pathogen#infect()
+set nocompatible
+
+
+
+
+"{{{ Vundle
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'cakebaker/scss-syntax.vim'
+
+call vundle#end()
+filetype plugin indent on
+
+"}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 "Reload vimrc when saved
 augroup reload_vimrc " {
@@ -8,12 +43,12 @@ augroup END " }
 
 let mapleader=" "
 
-set nocompatible
 set shortmess+=I  "Remove startup message
 set number        "Turn on line numbering
 set cursorline    "Highlight current line
 set scrolloff=3   "Minimum lines to keep above and below cursor
 set nowrap        "Turn off line wrapping
+set history=10000
 
 " Color scheme
 syntax on
@@ -45,6 +80,9 @@ set expandtab
 " Easy escape from insert mode.
 imap jk <Esc>
 imap jj <Esc>
+
+" Emmet
+imap hh <C-y>,
 
 " Quickly open netrw
 noremap <Leader>. :vspl. <Enter>
@@ -88,7 +126,7 @@ hi User2 guibg=#FF0952  guifg=white ctermbg=red
 set laststatus=2 "Always show statusline
 
 set statusline=
-set statusline+=\ %m%r%h%w  "Modified, readonly, help, preview 
+set statusline+=\ [%n]%m%r%h%w  "Buffer number, modified, readonly, help, preview 
 set statusline+=\ %.40F\    "Filepath with maximum width
 set statusline+=%=          "Right align
 set statusline+=%{FileSize()}
@@ -97,3 +135,8 @@ set statusline+=\ %Y        "Filetype
 set statusline+=\ %2*       "Color 2
 set statusline+=\ %l/%L\    "Current/total lines
 
+
+
+
+" Scss
+" au BufRead,BufNewFile *.scss set filetype=scss.css
