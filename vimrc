@@ -92,9 +92,6 @@ return (bytes / 1024) . "k"
 endif
 endfunction
 
-hi User1 guibg=#84CD22  guifg=white ctermbg=green
-hi User2 guibg=#FF0952  guifg=white ctermbg=red
-
 set laststatus=2 "Always show statusline
 
 set statusline=
@@ -102,8 +99,6 @@ set statusline+=\ [%n]%m%r%h%w  "Buffer number, modified, readonly, help, previe
 set statusline+=\ %.40F\    "Filepath with maximum width
 set statusline+=%=          "Right align
 set statusline+=%{FileSize()}
-set statusline+=\ %1*       "Color 1
 set statusline+=\ %Y        "Filetype
-set statusline+=\ %2*       "Color 2
 set statusline+=\ %l/%L\    "Current/total lines
 
