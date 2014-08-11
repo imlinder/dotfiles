@@ -7,8 +7,7 @@
 alias ..="cd .."
 alias ...="cd ../.."
 
-# Shortcuts
-alias d="~/Dropbox/"
+alias tmux="tmux -2"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Finder"
