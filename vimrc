@@ -1,11 +1,5 @@
 set nocompatible
 
-"Reload vimrc when saved
-augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
-
 source ~/.vim/bundles.vim
 
 filetype on
@@ -48,6 +42,10 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
+" Edit/source vimrc
+nnoremap <leader>ED :edit $MYVIMRC<cr>
+nnoremap <leader>ES :source $MYVIMRC<cr>
 
 " Easy escape from insert mode.
 imap jk <Esc>
