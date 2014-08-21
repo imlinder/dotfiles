@@ -1,3 +1,5 @@
+" vim: foldmethod=marker
+
 set nocompatible
 
 source ~/.vim/bundles.vim
@@ -6,15 +8,15 @@ filetype on
 filetype plugin on
 filetype indent on
 
-
-let mapleader=" "
-
 set shortmess+=I  "Remove startup message
-set number        "Turn on line numbering
-set cursorline    "Highlight current line
 set scrolloff=3   "Minimum lines to keep above and below cursor
 set nowrap        "Turn off line wrapping
 set history=10000
+
+" Look {{{1
+
+set number        "Turn on line numbering
+set cursorline    "Highlight current line
 
 " Color scheme
 syntax on
@@ -28,10 +30,6 @@ if has('gui_running')
   set guifont=Source\ Code\ Pro\ Light:h12
 endif
 
-" highlight search pattern
-set hlsearch
-hi Search guibg=#FBB829 guifg=black
-
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
@@ -42,6 +40,10 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
+" Mappings {{{1
+
+let mapleader=" "
 
 " Edit/source vimrc
 nnoremap <leader>ED :edit $MYVIMRC<cr>
@@ -65,6 +67,12 @@ nnoremap <F5> "=strftime("%c")<CR>P
 "Save file as sudo even if not opened as such
 cmap w!! w !sudo tee > /dev/null %
 
+"Searching {{{1
+
+" highlight search pattern
+set hlsearch
+hi Search guibg=#FBB829 guifg=black
+
 "Keep cursor in the center when moving to next/previous search match.
 nnoremap n nzz
 nnoremap N Nzz
@@ -72,12 +80,14 @@ nnoremap N Nzz
 "Dont move on *
 nnoremap * *<c-o>
 
-"Turn Off Swap Files
+"Swap Files {{{1
+
 set noswapfile
 set nobackup
 set nowb
 
-"Status line
+"Status line {{{1
+
 function! FileSize()
 let bytes = getfsize(expand("%:p"))
 if bytes <= 0
