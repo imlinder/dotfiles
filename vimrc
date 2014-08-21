@@ -1,5 +1,5 @@
 " vim: foldmethod=marker
-
+" Misc. {{{1
 set nocompatible
 
 source ~/.vim/bundles.vim
