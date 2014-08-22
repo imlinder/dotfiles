@@ -1,6 +1,6 @@
-" vim: foldmethod=marker
-" Misc. {{{1
+" Misc/Not sorted {{{1
 set nocompatible
+
 
 source ~/.vim/bundles.vim
 
@@ -79,6 +79,12 @@ nnoremap N Nzz
 
 "Dont move on *
 nnoremap * *<c-o>
+
+" File type specific {{{1
+
+" vim {{{2
+
+autocmd FileType vim,c++,txt setlocal foldmethod=marker
 
 "Swap Files {{{1
 
