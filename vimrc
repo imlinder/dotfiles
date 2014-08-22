@@ -43,11 +43,11 @@ set expandtab
 
 " Mappings {{{1
 
-let mapleader=" "
+map space <leader>
 
 " Edit/source vimrc
-nnoremap <leader>ED :edit $MYVIMRC<cr>
-nnoremap <leader>ES :source $MYVIMRC<cr>
+nnoremap <leader>V :edit $MYVIMRC<cr>
+nnoremap <leader>S :source $MYVIMRC<cr>
 
 " Easy escape from insert mode.
 imap jk <Esc>
