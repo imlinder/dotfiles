@@ -43,7 +43,7 @@ set expandtab
 
 " Mappings {{{1
 
-map space <leader>
+map <Space> <leader>
 
 " Edit/source vimrc
 nnoremap <leader>V :edit $MYVIMRC<cr>
@@ -55,6 +55,10 @@ imap jj <Esc>
 
 " Emmet
 imap hh <C-y>,
+
+" Folds
+nnoremap <Space><Space> za
+nnoremap <Space>f za
 
 " Quickly open netrw
 noremap <Leader>. :vspl. <Enter>
