@@ -84,11 +84,16 @@ nnoremap N Nzz
 "Dont move on *
 nnoremap * *<c-o>
 
-" File type specific {{{1
+" File type specific {{{2
 
 " vim {{{2
 
 autocmd FileType vim,c++,txt setlocal foldmethod=marker
+
+" Javascript {{{2
+
+" Folding
+au FileType javascript call JavaScriptFold()
 
 "Swap Files {{{1
 
@@ -114,7 +119,7 @@ set laststatus=2 "Always show statusline
 
 set statusline=
 set statusline+=\ [%n]%m%r%h%w  "Buffer number, modified, readonly, help, preview 
-set statusline+=\ %.40F\    "Filepath with maximum width
+set statusline+=\ %.41F\    "Filepath with maximum width
 set statusline+=%=          "Right align
 set statusline+=%{FileSize()}
 set statusline+=\ %Y        "Filetype
