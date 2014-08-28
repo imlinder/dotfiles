@@ -20,14 +20,14 @@ set cursorline    "Highlight current line
 
 " Color scheme
 syntax on
-set background=dark
-colorscheme molokai
+set background=light
+colorscheme solarized
 let &t_Co=256
 
 " Font
 if has('gui_running')
   set anti enc=utf-8
-  set guifont=Source\ Code\ Pro\ Light:h12
+  set guifont=Source\ Code\ Pro\ Medium:h12
 endif
 
 set guioptions-=m  "remove menu bar
@@ -84,7 +84,7 @@ nnoremap N Nzz
 "Dont move on *
 nnoremap * *<c-o>
 
-" File type specific {{{2
+" File type specific {{{1
 
 " vim {{{2
 
@@ -95,6 +95,11 @@ autocmd FileType vim,c++,txt setlocal foldmethod=marker
 " Folding
 au FileType javascript call JavaScriptFold()
 
+" Plugin settings {{{1
+
+" vim-notes {{{2
+
+let g:notes_directories = ['~/Dropbox/Notes']
 "Swap Files {{{1
 
 set noswapfile
