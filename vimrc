@@ -21,15 +21,23 @@ set cursorline    "Highlight current line
 
 " Color scheme
 syntax on
-set background=dark
-colorscheme wombat
 let &t_Co=256
+if has('gui_running')
+  set background=dark
+  colorscheme wombat
+else
+  colorscheme molokai
+endif
 
 " Font
 if has('gui_running')
   set anti enc=utf-8
   set guifont=DejaVu\ Sans\ Mono:h13
 endif
+
+" Cursor
+set guicursor=a:block-Cursor
+set guicursor+=a:blinkon0
 
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
