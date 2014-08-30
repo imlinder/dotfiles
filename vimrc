@@ -89,7 +89,7 @@ nnoremap * *<c-o>
 
 " vim {{{2
 
-autocmd FileType vim,c++,txt setlocal foldmethod=marker
+autocmd FileType vim setlocal foldmethod=marker
 
 " Javascript {{{2
 
