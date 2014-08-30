@@ -22,13 +22,13 @@ set cursorline    "Highlight current line
 " Color scheme
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme wombat
 let &t_Co=256
 
 " Font
 if has('gui_running')
   set anti enc=utf-8
-  set guifont=Inconsolata:h13
+  set guifont=DejaVu\ Sans\ Mono:h13
 endif
 
 set guioptions-=m  "remove menu bar
