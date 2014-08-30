@@ -2,7 +2,6 @@
 
 set nocompatible
 
-
 source $HOME/.vim/bundles.vim
 
 filetype on
