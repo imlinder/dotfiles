@@ -1,8 +1,9 @@
 " Misc/Not sorted {{{1
+
 set nocompatible
 
 
-source ~/.vim/bundles.vim
+source $HOME/.vim/bundles.vim
 
 filetype on
 filetype plugin on
@@ -20,14 +21,14 @@ set cursorline    "Highlight current line
 
 " Color scheme
 syntax on
-set background=light
+set background=dark
 colorscheme solarized
 let &t_Co=256
 
 " Font
 if has('gui_running')
   set anti enc=utf-8
-  set guifont=Source\ Code\ Pro\ Medium:h12
+  set guifont=Inconsolata:h13
 endif
 
 set guioptions-=m  "remove menu bar
@@ -46,8 +47,8 @@ set expandtab
 map <Space> <leader>
 
 " Edit/source vimrc
-nnoremap <leader>V :edit $MYVIMRC<cr>
-nnoremap <leader>S :source $MYVIMRC<cr>
+nnoremap <leader>VE :edit $MYVIMRC<cr>
+nnoremap <leader>VS :source $MYVIMRC<cr>
 
 " Easy escape from insert mode.
 imap jk <Esc>
@@ -123,10 +124,11 @@ endfunction
 set laststatus=2 "Always show statusline
 
 set statusline=
-set statusline+=\ [%n]%m%r%h%w  "Buffer number, modified, readonly, help, preview 
+set statusline+=\ [%n]%m%r%h%w  "Buffer number, modified, readonly, help, preview
 set statusline+=\ %.41F\    "Filepath with maximum width
 set statusline+=%=          "Right align
-set statusline+=%{FileSize()}
+set statusline+=%{fugitive#statusline()}
+set statusline+=\ %{FileSize()}
 set statusline+=\ %Y        "Filetype
 set statusline+=\ %l/%L\    "Current/total lines
 
