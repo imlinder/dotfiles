@@ -20,8 +20,6 @@ Plugin 'jelera/vim-javascript-syntax'
 " }}}
 " Colorschemes {{{
 Plugin 'tomasr/molokai'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'zefei/cake16'
 Plugin 'vim-scripts/Wombat'
 Plugin 'wombat256.vim'
 " }}}
