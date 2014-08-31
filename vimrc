@@ -25,7 +25,7 @@ if has('gui_running')
   set background=dark
   colorscheme wombat
 else
-  colorscheme molokai
+  colorscheme wombat256mod
 endif
 
 " Font
@@ -42,6 +42,7 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
+set guioptions-=e  "Use vim style tabs, not gui
 
 " Indentation
 set smartindent
@@ -83,7 +84,7 @@ cmap w!! w !sudo tee > /dev/null %
 
 " highlight search pattern
 set hlsearch
-hi Search guibg=#FBB829 guifg=black
+"hi Search guibg=#FBB829 guifg=black
 
 "Keep cursor in the center when moving to next/previous search match.
 nnoremap n nzz
@@ -137,5 +138,5 @@ set statusline+=%=          "Right align
 set statusline+=%{fugitive#statusline()}
 set statusline+=\ %{FileSize()}
 set statusline+=\ %Y        "Filetype
-set statusline+=\ %l/%L\    "Current/total lines
+set statusline+=\ %l/%L\ %c    "Current/total lines column
 
