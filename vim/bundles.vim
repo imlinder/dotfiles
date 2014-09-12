@@ -22,6 +22,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/Wombat'
 Plugin 'wombat256.vim'
+Plugin 'summerfruit256.vim'
 " }}}
 
 call vundle#end()

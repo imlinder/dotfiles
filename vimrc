@@ -23,9 +23,9 @@ syntax on
 let &t_Co=256
 if has('gui_running')
   set background=dark
-  colorscheme wombat
+  colorscheme summerfruit256
 else
-  colorscheme wombat256mod
+  colorscheme summerfruit256
 endif
 
 " Font
