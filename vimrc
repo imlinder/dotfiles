@@ -4,6 +4,8 @@ set nocompatible
 
 source $HOME/.vim/bundles.vim
 
+set backspace=2 "Fix terminal backspace issue
+
 filetype on
 filetype plugin on
 filetype indent on
