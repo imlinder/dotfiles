@@ -108,9 +108,6 @@ au FileType javascript call JavaScriptFold()
 
 " Plugin settings {{{1
 
-" vim-notes {{{2
-
-let g:notes_directories = ['~/Dropbox/Notes']
 "Swap Files {{{1
 
 set noswapfile
