@@ -15,6 +15,7 @@ Plugin 'godlygeek/csapprox'
 " Syntax {{{
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'zaiste/tmux.vim'
 " }}}
 " Colorschemes {{{
 Plugin 'tomasr/molokai'
