@@ -18,8 +18,6 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'zaiste/tmux.vim'
 " }}}
 " Colorschemes {{{
-Plugin 'tomasr/molokai'
-Plugin 'vim-scripts/Wombat'
 Plugin 'wombat256.vim'
 Plugin 'summerfruit256.vim'
 " }}}
