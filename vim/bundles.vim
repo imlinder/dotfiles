@@ -11,9 +11,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
-
-" Make gvim-only colorschemes work transparently in terminal vim
-Plugin 'godlygeek/csapprox'
 " }}}
 " Syntax {{{
 Plugin 'cakebaker/scss-syntax.vim'
