@@ -16,6 +16,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'zaiste/tmux.vim'
+Plugin 'StanAngeloff/php.vim'
 " }}}
 " Colorschemes {{{
 Plugin 'wombat256.vim'
