@@ -19,6 +19,7 @@ set history=10000
 
 set number        "Turn on line numbering
 set cursorline    "Highlight current line
+set cursorcolumn  "Highlight current column
 
 " Color scheme
 syntax on
