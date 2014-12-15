@@ -15,6 +15,9 @@ set scrolloff=3   "Minimum lines to keep above and below cursor
 set nowrap        "Turn off line wrapping
 set history=10000
 
+set listchars=tab:▸\ ,trail:·
+set list
+
 " Look {{{1
 
 set number        "Turn on line numbering
