@@ -31,3 +31,8 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+echo "Moving bin to $olddir"
+mv ~/bin $olddir/
+echo "Creating symlink to bin in home directory."
+ln -s $dir/bin ~/bin
