@@ -107,6 +107,9 @@ autocmd FileType vim setlocal foldmethod=marker
 
 " Javascript {{{2
 
+" ejs {{{2
+au BufNewFile,BufRead *.ejs set filetype=html
+
 " Folding
 au FileType javascript call JavaScriptFold()
 
