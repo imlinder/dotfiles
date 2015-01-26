@@ -106,9 +106,6 @@ nnoremap * *<c-o>
 autocmd FileType vim setlocal foldmethod=marker
 
 " ejs {{{2
-au BufNewFile,BufRead *.ejs set filetype=html}}}
-
-" ejs {{{2
 au BufNewFile,BufRead *.ejs set filetype=html
 
 " Javascript {{{2
