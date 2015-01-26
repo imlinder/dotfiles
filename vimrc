@@ -124,15 +124,15 @@ set nowb
 "Status line {{{1
 
 function! FileSize()
-let bytes = getfsize(expand("%:p"))
-if bytes <= 0
-return ""
-endif
-if bytes < 1024
-return bytes
-else
-return (bytes / 1024) . "k"
-endif
+  let bytes = getfsize(expand("%:p"))
+  if bytes <= 0
+    return ""
+  endif
+  if bytes < 1024
+    return bytes
+  else
+    return (bytes / 1024) . "k"
+  endif
 endfunction
 
 set laststatus=2 "Always show statusline
