@@ -115,6 +115,9 @@ au FileType javascript call JavaScriptFold()
 
 " Plugin settings {{{1
 
+" vimwiki {{{2
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/'}]
+
 "Swap Files {{{1
 
 set noswapfile

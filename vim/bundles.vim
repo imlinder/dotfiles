@@ -12,6 +12,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'godlygeek/csapprox'
+Plugin 'vimwiki/vimwiki'
 " }}}
 " Syntax {{{
 Plugin 'cakebaker/scss-syntax.vim'
