@@ -27,12 +27,8 @@ set cursorcolumn  "Highlight current column
 " Color scheme
 syntax on
 let &t_Co=256
-if has('gui_running')
-  set background=dark
-  colorscheme wombat256mod
-else
-  colorscheme wombat256mod
-endif
+set background=dark
+colorscheme wombat256mod
 
 " Font
 if has('gui_running')
@@ -66,13 +62,11 @@ nnoremap <leader>VS :source $MYVIMRC<cr>
 
 " Easy escape from insert mode.
 imap jk <Esc>
-imap jj <Esc>
 
 " Emmet
 imap hh <C-y>,
 
 " Folds
-nnoremap <Space><Space> za
 nnoremap <Space>f za
 
 " Quickly open netrw
@@ -90,7 +84,6 @@ cmap w!! w !sudo tee > /dev/null %
 
 " highlight search pattern
 set hlsearch
-"hi Search guibg=#FBB829 guifg=black
 
 "Keep cursor in the center when moving to next/previous search match.
 nnoremap n nzz
@@ -106,6 +99,8 @@ nnoremap * *<c-o>
 autocmd FileType vim setlocal foldmethod=marker
 
 " ejs {{{2
+
+" Html syntax on ejs-files
 au BufNewFile,BufRead *.ejs set filetype=html
 
 " Javascript {{{2
@@ -142,10 +137,10 @@ set laststatus=2 "Always show statusline
 
 set statusline=
 set statusline+=\ [%n]%m%r%h%w  "Buffer number, modified, readonly, help, preview
-set statusline+=\ %.41F\    "Filepath with maximum width
-set statusline+=%=          "Right align
+set statusline+=\ %.41F\        "Filepath with maximum width
+set statusline+=%=              "Right align
 set statusline+=%{fugitive#statusline()}
 set statusline+=\ %{FileSize()}
-set statusline+=\ %Y        "Filetype
-set statusline+=\ %l/%L\ %c    "Current/total lines column
+set statusline+=\ %Y            "Filetype
+set statusline+=\ %l/%L\ %c     "Current/total lines column
 
