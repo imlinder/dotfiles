@@ -28,7 +28,7 @@ set cursorcolumn  "Highlight current column
 syntax on
 let &t_Co=256
 set background=dark
-colorscheme wombat256mod
+colorscheme wells-colors
 
 " Font
 if has('gui_running')

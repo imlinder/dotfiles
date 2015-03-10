@@ -24,6 +24,7 @@ Plugin 'tpope/vim-markdown'
 " Colorschemes {{{
 Plugin 'wombat256.vim'
 Plugin 'summerfruit256.vim'
+Plugin 'wellsjo/wells-colorscheme.vim'
 " }}}
 
 call vundle#end()
