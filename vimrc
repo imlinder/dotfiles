@@ -70,8 +70,8 @@ imap hh <C-y>,
 nnoremap <Space>f za
 
 " Quickly open netrw
-noremap <Leader>. :vspl. <Enter>
-noremap <Leader>: :spl. <Enter>
+noremap <Leader>: :vspl. <Enter>
+noremap <Leader>. :spl. <Enter>
 
 " Datestamp
 inoremap <F5> <C-R>=strftime("%c")<CR>
