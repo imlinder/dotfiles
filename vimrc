@@ -25,10 +25,16 @@ set cursorline    "Highlight current line
 set cursorcolumn  "Highlight current column
 
 " Color scheme
-syntax on
-let &t_Co=256
+if &t_Co > 2 || has("gui_running")
+  syntax on
+endif
+
+"let &t_Co=256
 set background=dark
-colorscheme wombat256mod
+
+if &t_Co >= 256 || has("gui_running")
+  colorscheme wombat256mod
+endif
 
 " Font
 if has('gui_running')
@@ -102,6 +108,11 @@ autocmd FileType vim setlocal foldmethod=marker
 
 " Html syntax on ejs-files
 au BufNewFile,BufRead *.ejs set filetype=html
+
+" handlebars {{{2
+"
+" Html syntax on handlebars-files
+au BufNewFile,BufRead *.hbs set filetype=html
 
 " Javascript {{{2
 
