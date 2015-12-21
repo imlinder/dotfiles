@@ -5,11 +5,10 @@ call vundle#begin()
 " Plugins {{{
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vimwiki/vimwiki'
 " }}}

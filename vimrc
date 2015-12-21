@@ -29,8 +29,11 @@ set cursorline    "Highlight current line
 set cursorcolumn  "Highlight current column
 
 " Color scheme
-syntax on
-let &t_Co=256
+if &t_Co > 2 || has("gui_running")
+  syntax on
+endif
+
+"let &t_Co=256
 set background=dark
 colorscheme hybrid
 
@@ -74,8 +77,8 @@ imap hh <C-y>,
 nnoremap <Space>f za
 
 " Quickly open netrw
-noremap <Leader>. :vspl. <Enter>
-noremap <Leader>: :spl. <Enter>
+noremap <Leader>: :vspl. <Enter>
+noremap <Leader>. :spl. <Enter>
 
 " Datestamp
 inoremap <F5> <C-R>=strftime("%c")<CR>
@@ -106,6 +109,11 @@ autocmd FileType vim setlocal foldmethod=marker
 
 " Html syntax on ejs-files
 au BufNewFile,BufRead *.ejs set filetype=html
+
+" handlebars {{{2
+"
+" Html syntax on handlebars-files
+au BufNewFile,BufRead *.hbs set filetype=html
 
 " Javascript {{{2
 
