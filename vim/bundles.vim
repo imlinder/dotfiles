@@ -25,6 +25,8 @@ Plugin 'tpope/vim-markdown'
 Plugin 'wombat256.vim'
 Plugin 'summerfruit256.vim'
 Plugin 'wellsjo/wells-colorscheme.vim'
+Plugin 'w0ng/vim-hybrid'
+let g:hybrid_use_Xresources = 1
 " }}}
 
 call vundle#end()

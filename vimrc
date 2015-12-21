@@ -1,4 +1,6 @@
 " Misc/Not sorted {{{1
+scriptencoding utf-8
+set encoding=utf-8
 
 set nocompatible
 
@@ -18,6 +20,8 @@ set history=10000
 set listchars=tab:▸\ ,trail:·
 set list
 
+let g:netrw_liststyle=3
+
 " Look {{{1
 
 set number        "Turn on line numbering
@@ -28,7 +32,7 @@ set cursorcolumn  "Highlight current column
 syntax on
 let &t_Co=256
 set background=dark
-colorscheme wells-colors
+colorscheme hybrid
 
 " Font
 if has('gui_running')
@@ -111,7 +115,7 @@ au FileType javascript call JavaScriptFold()
 " Plugin settings {{{1
 
 " vimwiki {{{2
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/'}]
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/', 'syntax': 'markdown', 'ext': '.md'}]
 
 "Swap Files {{{1
 
