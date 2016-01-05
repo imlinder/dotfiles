@@ -26,6 +26,7 @@ if &t_Co > 2
 endif
 
 set background=dark
+<<<<<<< HEAD
 
 if &t_Co >= 256
   colorscheme hybrid
