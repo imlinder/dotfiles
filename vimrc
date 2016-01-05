@@ -1,92 +1,90 @@
-" Misc/Not sorted {{{1
+" Misc {{{1
 
 set nocompatible
 
-source $HOME/.vim/bundles.vim
+source $HOME/.vim/bundles.vim "Plugins loaded with Vundle
 
 set backspace=2 "Fix terminal backspace issue
 
-filetype on
-filetype plugin on
-filetype indent on
-
 set shortmess+=I  "Remove startup message
-set scrolloff=3   "Minimum lines to keep above and below cursor
 set nowrap        "Turn off line wrapping
-set history=10000
+set history=5000  "Increase history entries (default: 20)
 
-set listchars=tab:▸\ ,trail:·
-set list
+" Swap {{{1
 
-" Look {{{1
+set directory=~/.vimswap
 
-set number        "Turn on line numbering
+" Syntax highligting {{{1
+
 set cursorline    "Highlight current line
 set cursorcolumn  "Highlight current column
 
-" Color scheme
-if &t_Co > 2 || has("gui_running")
+filetype plugin indent on
+
+if &t_Co > 2
   syntax on
 endif
 
-"let &t_Co=256
 set background=dark
 
-if &t_Co >= 256 || has("gui_running")
-  colorscheme wombat256mod
+if &t_Co >= 256
+  colorscheme hybrid
 endif
 
-" Font
-if has('gui_running')
-  set anti enc=utf-8
-  set guifont=DejaVu\ Sans\ Mono:h13
-endif
+" Html syntax on ejs and handlebar files
+au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.hbs set filetype=html
 
-" Cursor
-set guicursor=a:block-Cursor
-set guicursor+=a:blinkon0
+" Indentation {{{1
 
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
-set guioptions-=e  "Use vim style tabs, not gui
-
-" Indentation
+set expandtab "Spaces instead of tabs
+set autoindent
 set smartindent
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
-set expandtab
 
-" Mappings {{{1
+set listchars=tab:▸\ ,trail:· "Show all tabs, show all trailing spaces
+set list
 
+" Misc mappings {{{1
+
+"Use space as leader
 map <Space> <leader>
 
-" Edit/source vimrc
-nnoremap <leader>VE :edit $MYVIMRC<cr>
-nnoremap <leader>VS :source $MYVIMRC<cr>
-
-" Easy escape from insert mode.
+"Easy escape from insert mode.
 imap jk <Esc>
 
-" Emmet
+imap <C-j> <CR><Esc>O
+
+"Toggle folds
+nnoremap <Leader>f za
+
+"Toggle line numbers
+nnoremap <Leader>nu :set nu!<Enter>
+
+"Toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+
+" Edit/source vimrc
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
+"Expand Emmet
 imap hh <C-y>,
 
-" Folds
-nnoremap <Space>f za
-
-" Quickly open netrw
+" Quickly open file browser
 noremap <Leader>: :vspl. <Enter>
 noremap <Leader>. :spl. <Enter>
 
-" Datestamp
+"Insert Datestamp
 inoremap <F5> <C-R>=strftime("%c")<CR>
 nnoremap <F5> "=strftime("%c")<CR>P
 
 "Save file as sudo even if not opened as such
 cmap w!! w !sudo tee > /dev/null %
 
-"Searching {{{1
+" Searching {{{1
 
 " highlight search pattern
 set hlsearch
@@ -98,60 +96,33 @@ nnoremap N Nzz
 "Dont move on *
 nnoremap * *<c-o>
 
-" File type specific {{{1
 
-" vim {{{2
+" Folding {{{1
 
 autocmd FileType vim setlocal foldmethod=marker
+"au FileType javascript call JavaScriptFold()
 
-" ejs {{{2
-
-" Html syntax on ejs-files
-au BufNewFile,BufRead *.ejs set filetype=html
-
-" handlebars {{{2
-"
-" Html syntax on handlebars-files
-au BufNewFile,BufRead *.hbs set filetype=html
-
-" Javascript {{{2
-
-" Folding
-au FileType javascript call JavaScriptFold()
-
-" Plugin settings {{{1
-
-" vimwiki {{{2
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/', 'syntax': 'markdown', 'ext': '.md'}]
-
-"Swap Files {{{1
-
-set noswapfile
-set nobackup
-set nowb
-
-"Status line {{{1
-
-function! FileSize()
-  let bytes = getfsize(expand("%:p"))
-  if bytes <= 0
-    return ""
-  endif
-  if bytes < 1024
-    return bytes
-  else
-    return (bytes / 1024) . "k"
-  endif
-endfunction
+" Status line {{{1
 
 set laststatus=2 "Always show statusline
 
-set statusline=
-set statusline+=\ [%n]%m%r%h%w  "Buffer number, modified, readonly, help, preview
-set statusline+=\ %.41F\        "Filepath with maximum width
-set statusline+=%=              "Right align
-set statusline+=%{fugitive#statusline()}
-set statusline+=\ %{FileSize()}
-set statusline+=\ %Y            "Filetype
-set statusline+=\ %l/%L\ %c     "Current/total lines column
+let g:airline_powerline_fonts = 1
+
+let g:airline_theme='hybridline'
+
+"set statusline=
+"set statusline+=\ [%n]%m%r%h%w  "Buffer number, modified, readonly, help, preview
+"set statusline+=\ %.41F\        "Filepath with maximum width
+"set statusline+=%=              "Right align
+"set statusline+=%{fugitive#statusline()}
+"set statusline+=\ %{FileSize()}
+"set statusline+=\ %Y            "Filetype
+"set statusline+=\ %l/%L\ %c     "Current/total lines column
+
+
+" Plugin specific {{{1
+
+"Vimwiki
+
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/', 'syntax': 'markdown', 'ext': '.md'}]
 
