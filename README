@@ -1,9 +1,8 @@
-┌─┐
-┴─┴
-ಠ_ರೃ
-
-
 TODO
 ====
 * Add WeeChat configs
-* Add OSX configs
+* Better build/symlink-script to allow selection of configs. E.g. `.Xresources`
+  only on linux.
+* Install instructions.
+
+
