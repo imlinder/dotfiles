@@ -130,7 +130,7 @@ let g:tmuxline_preset = {
   \'c'   : '#I #P',
   \'win' : '#I #W',
   \'cwin': '#I #W',
-  \'x'   : '#(battery)',
+  \'x'   : '#(battery Charging) #[fg=red]#(battery Discharging)',
   \'y'   : '%a %d %b %R',
   \'z'   : '#H'}
 
