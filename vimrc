@@ -122,6 +122,18 @@ let g:airline_theme='hybridline'
 
 " Plugin specific {{{1
 
+"Tmuxline
+
+let g:tmuxline_preset = {
+  \'a'   : '#S',
+  \'b'   : '#W',
+  \'c'   : '#I #P',
+  \'win' : '#I #W',
+  \'cwin': '#I #W',
+  \'x'   : '#(battery)',
+  \'y'   : '%a %d %b %R',
+  \'z'   : '#H'}
+
 "Vimwiki
 
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/', 'syntax': 'markdown', 'ext': '.md'}]
