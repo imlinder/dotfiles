@@ -131,8 +131,7 @@ let g:tmuxline_preset = {
   \'win' : '#I #W',
   \'cwin': '#I #W',
   \'x'   : '#(battery Charging) #[fg=red]#(battery Discharging)',
-  \'y'   : '%a %d %b %R',
-  \'z'   : '#H'}
+  \'y'   : '%a %d %b %R'}
 
 "Vimwiki
 
