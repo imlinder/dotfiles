@@ -106,7 +106,12 @@ autocmd FileType vim setlocal foldmethod=marker
 
 set laststatus=2 "Always show statusline
 
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 
 let g:airline_theme='hybridline'
 
@@ -123,6 +128,8 @@ let g:airline_theme='hybridline'
 " Plugin specific {{{1
 
 "Tmuxline
+
+let g:tmuxline_powerline_separators = 0
 
 let g:tmuxline_preset = {
   \'a'   : '#S',
