@@ -63,6 +63,9 @@ nnoremap <Leader>f za
 "Toggle line numbers
 nnoremap <Leader>nu :set nu!<Enter>
 
+"Fugitive
+nnoremap <leader>gs :Gstatus<CR>
+
 "Toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 
@@ -106,24 +109,8 @@ autocmd FileType vim setlocal foldmethod=marker
 
 set laststatus=2 "Always show statusline
 
-let g:airline_powerline_fonts = 0
-
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-
-let g:airline_theme='hybridline'
-
-"set statusline=
-"set statusline+=\ [%n]%m%r%h%w  "Buffer number, modified, readonly, help, preview
-"set statusline+=\ %.41F\        "Filepath with maximum width
-"set statusline+=%=              "Right align
-"set statusline+=%{fugitive#statusline()}
-"set statusline+=\ %{FileSize()}
-"set statusline+=\ %Y            "Filetype
-"set statusline+=\ %l/%L\ %c     "Current/total lines column
-
+let g:lightline = {}
+let g:lightline.colorscheme = 'hybrid'
 
 " Plugin specific {{{1
 

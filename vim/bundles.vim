@@ -8,7 +8,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'w0ng/vim-hybrid'
 " }}}
 " Plugins {{{
-Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
+Plugin 'cocopon/lightline-hybrid.vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'shougo/vimfiler.vim'
@@ -21,6 +22,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vimwiki/vimwiki'
+Plugin 'Valloric/YouCompleteMe'
 " }}}
 " Syntax {{{
 Plugin 'cakebaker/scss-syntax.vim'
