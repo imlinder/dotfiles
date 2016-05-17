@@ -10,9 +10,17 @@ set shortmess+=I  "Remove startup message
 set nowrap        "Turn off line wrapping
 set history=5000  "Increase history entries (default: 20)
 
-" Swap {{{1
+set spell
+set spelllang=en
+
+" Swap/undofile {{{1
 
 set directory=~/.vimswap
+
+if has("persistent_undo")
+	set undodir=~/.vimundo/
+	set undofile
+endif
 
 " Syntax highligting {{{1
 
@@ -66,8 +74,8 @@ nnoremap <Leader>nu :set nu!<Enter>
 "Fugitive
 nnoremap <leader>gs :Gstatus<CR>
 
-"Toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
+"Toggle undotree
+nnoremap <leader>u :UndotreeToggle<CR>
 
 " Edit/source vimrc
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
@@ -75,6 +83,10 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 
 "Expand Emmet
 imap hh <C-y>,
+
+"Ag instead of Ack
+cmap Ag Ack
+cmap ag Ack
 
 " Quickly open file browser
 noremap <Leader>: :vspl. <Enter>
@@ -114,6 +126,10 @@ let g:lightline.colorscheme = 'hybrid'
 
 " Plugin specific {{{1
 
+"VimFiler
+
+"let g:vimfiler_as_default_explorer = 0
+
 "Tmuxline
 
 let g:tmuxline_powerline_separators = 0
@@ -130,4 +146,9 @@ let g:tmuxline_preset = {
 "Vimwiki
 
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/', 'syntax': 'markdown', 'ext': '.md'}]
+
+"Ack
+if executable('ag')
+	let g:ackprg = 'ag --vimgrep'
+endif
 
