@@ -45,7 +45,7 @@ au BufNewFile,BufRead *.hbs set filetype=html
 
 " Indentation {{{1
 
-set expandtab "Spaces instead of tabs
+set noexpandtab "Spaces instead of tabs
 set autoindent
 set smartindent
 set tabstop=2
@@ -78,15 +78,11 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 
 " Edit/source vimrc
-nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>ev :tabnew $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 "Expand Emmet
 imap hh <C-y>,
-
-"Ag instead of Ack
-cmap Ag Ack
-cmap ag Ack
 
 " Quickly open file browser
 noremap <Leader>: :vspl. <Enter>

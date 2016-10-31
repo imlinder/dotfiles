@@ -45,7 +45,7 @@ ZSH_THEME="avit"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git web-search wd)
+plugins=(git gitopen web-search wd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,3 +78,8 @@ export PATH="$HOME/bin:$PATH";
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias e=nvim
+alias c=clear
+alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+
+export PATH="/usr/local/sbin:$PATH"

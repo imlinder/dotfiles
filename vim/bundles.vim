@@ -6,6 +6,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Colorschemes {{{
 Plugin 'w0ng/vim-hybrid'
+Plugin 'NLKNguyen/papercolor-theme'
 " }}}
 " Plugins {{{
 Plugin 'itchyny/lightline.vim'
@@ -23,6 +24,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vimwiki/vimwiki'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'craigemery/vim-autotag'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 " }}}
