@@ -1,14 +1,9 @@
-TODO
-====
-* Add WeeChat configs
-* Better build/symlink-script to allow selection of configs. E.g. `.Xresources`
-  only on linux.
-* Install instructions.
+DOTFILES
+========
 
-MANUAL
-======
+## Manually install (or automate)
 
-## Ctrl-w everywhere
+### Ctrl-w everywhere
 
 Add `~/Library/KeyBindings/DefaultKeyBinding.dict` with
 
@@ -18,3 +13,9 @@ Add `~/Library/KeyBindings/DefaultKeyBinding.dict` with
 }
 ```
 
+## Todo
+
+* Add WeeChat configs
+* Better build/symlink-script to allow selection of configs. E.g. `.Xresources`
+  only on linux.
+* Install instructions.
