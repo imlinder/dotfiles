@@ -32,7 +32,16 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+echo '\n'
+
 echo "Moving bin to $olddir"
 mv ~/bin $olddir/
 echo "Creating symlink to bin in home directory."
 ln -s $dir/bin ~/bin
+
+echo '\n'
+
+echo "Moving Spectacle Settings to $olddir"
+mv ~/Library/Application\ Support/Spectacle $olddir/
+echo "Creating symlink to Spectacle in Application Support directory."
+ln -s $dir/Spectacle ~/Library/Application\ Support/Spectacle

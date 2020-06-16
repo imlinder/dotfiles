@@ -81,5 +81,19 @@ export PATH="$HOME/bin:$PATH";
 alias e=nvim
 alias c=clear
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+cht() {
+	curl cheat.sh/$1
+}
+
+alias composer="php /usr/local/bin/composer.phar"
 
 export PATH="/usr/local/sbin:$PATH"
+
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
