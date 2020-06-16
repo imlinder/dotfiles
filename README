@@ -5,4 +5,16 @@ TODO
   only on linux.
 * Install instructions.
 
+MANUAL
+======
+
+## Ctrl-w everywhere
+
+Add `~/Library/KeyBindings/DefaultKeyBinding.dict` with
+
+```
+{
+    "^w" = "deleteWordBackward:";
+}
+```
 
