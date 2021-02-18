@@ -1,7 +1,9 @@
 DOTFILES
 ========
 
-## Manually install (or automate)
+My personal dotfiles
+
+Managed with [yadm](https://yadm.io/).
 
 ### Ctrl-w everywhere
 
@@ -14,8 +16,3 @@ Add `~/Library/KeyBindings/DefaultKeyBinding.dict` with
 ```
 
 ## Todo
-
-* Add WeeChat configs
-* Better build/symlink-script to allow selection of configs. E.g. `.Xresources`
-  only on linux.
-* Install instructions.
