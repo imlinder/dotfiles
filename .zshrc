@@ -45,7 +45,7 @@ ZSH_THEME="avit"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitopen web-search wd)
+plugins=(git web-search wd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,9 +88,6 @@ cht() {
 alias composer="php /usr/local/bin/composer.phar"
 
 export PATH="/usr/local/sbin:$PATH"
-
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/bin:$PATH"
 
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
