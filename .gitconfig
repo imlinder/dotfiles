@@ -1,0 +1,9 @@
+[user]
+	email = johan@fmca.se
+	name = Johan Linder
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore_global
+[merge]
+	tool = opendiff
+
