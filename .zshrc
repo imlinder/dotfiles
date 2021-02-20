@@ -81,6 +81,7 @@ export PATH="$HOME/bin:$PATH";
 alias e=nvim
 alias c=clear
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+alias vw='e ~/Dropbox/vimwiki/index.md'
 cht() {
 	curl cheat.sh/$1
 }

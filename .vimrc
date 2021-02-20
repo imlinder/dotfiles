@@ -1,17 +1,71 @@
-" Misc {{{1
-
 set nocompatible
 
-source $HOME/.vim/bundles.vim "Plugins loaded with vim plug
+"source $HOME/.vim/bundles.vim "Plugins loaded with vim plug
 
+" Plugins {{{1
+
+" Install plug.vim if it's not yet installed
+if empty( glob('~/.vim/autoload/plug.vim') )
+	!mkdir -p ~/.vim/autoload/
+	!curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+call plug#begin('~/.vim/plugged')
+
+" Plugins
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'itchyny/lightline.vim'
+Plug 'cocopon/lightline-hybrid.vim'
+"Plug 'edkolev/tmuxline.vim'
+"Use this fork until PR with support for termguicolors for lightline has been merged
+Plug 'hoov/tmuxline.vim', { 'branch': 'truecolor-lightline'}
+Plug 'mbbill/undotree'
+Plug 'tpope/vim-fugitive'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/syntastic'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'vimwiki/vimwiki'
+Plug 'mileszs/ack.vim'
+Plug 'kien/ctrlp.vim'
+
+" Syntax
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'zaiste/tmux.vim'
+Plug 'StanAngeloff/php.vim'
+Plug 'tpope/vim-markdown'
+
+" Colorschemes
+Plug 'w0ng/vim-hybrid'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ayu-theme/ayu-vim'
+
+call plug#end()
+
+" }}}
+
+" Misc {{{1
 set backspace=2 "Fix terminal backspace issue
 
 set shortmess+=I  "Remove startup message
 set nowrap        "Turn off line wrapping
 set history=5000  "Increase history entries (default: 20)
 
-set spell
+set nospell
 set spelllang=en
+
+" coc {{{1
+let g:coc_global_extension = ['coc-git', 'coc-json', 'coc-tailwindcss', 'coc-tsserver', 'coc-phpls']
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Swap/undofile {{{1
 
@@ -24,20 +78,31 @@ endif
 
 " Syntax highligting {{{1
 
-set cursorline    "Highlight current line
-set cursorcolumn  "Highlight current column
+"set cursorline    "Highlight current line
+"set cursorcolumn  "Highlight current column
 
 filetype plugin indent on
+
+if exists('+termguicolors')
+  set termguicolors
+else
+  set t_Co=256
+endif
 
 if &t_Co > 2
   syntax on
 endif
 
 set background=dark
+let ayucolor="light"
+let ayucolor="mirage"
 
 if &t_Co >= 256
-  colorscheme hybrid
+  colorscheme ayu
+  let g:palenight_terminal_italics=1
 endif
+
+
 
 " Html syntax on ejs and handlebar files
 au BufNewFile,BufRead *.ejs set filetype=html
@@ -45,15 +110,26 @@ au BufNewFile,BufRead *.hbs set filetype=html
 
 " Indentation {{{1
 
-set noexpandtab "Spaces instead of tabs
+set noexpandtab
 set autoindent
 set smartindent
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
-set listchars=tab:▸\ ,trail:· "Show all tabs, show all trailing spaces
+set listchars=tab:▸\ ,trail:· "Show all tabs, show trailing spaces
 set list
+
+	" netrw {{{1
+
+let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_winsize = 25
+nnoremap - :e dummynetrwbuf \| Explore \| bw! dummynetrwbuf <CR>
+"noremap <Leader>. :Vex <Enter>
+"noremap <Leader>. :spl. <Enter>
+
 
 " Misc mappings {{{1
 
@@ -84,10 +160,6 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 "Expand Emmet
 imap hh <C-y>,
 
-" Quickly open file browser
-noremap <Leader>: :vspl. <Enter>
-noremap <Leader>. :spl. <Enter>
-
 "Insert Datestamp
 inoremap <F5> <C-R>=strftime("%c")<CR>
 nnoremap <F5> "=strftime("%c")<CR>P
@@ -117,18 +189,23 @@ autocmd FileType vim setlocal foldmethod=marker
 
 set laststatus=2 "Always show statusline
 
-let g:lightline = {}
-let g:lightline.colorscheme = 'hybrid'
+let g:lightline = { 
+	\'colorscheme': 'ayu',
+	\ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+	\ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
+\}
+"let g:lightline = { 'colorscheme': 'ayu' }
 
-" Plugin specific {{{1
+let g:tmuxline_preset = 'ayu'
 
-"VimFiler
-
-"let g:vimfiler_as_default_explorer = 0
-
-"Tmuxline
+if exists('$TMUX')
+	au InsertEnter * Tmuxline lightline_insert
+	au InsertLeave * Tmuxline lightline
+endif
 
 let g:tmuxline_powerline_separators = 0
+
+let g:tmuxline_status_justify = 'center'
 
 let g:tmuxline_preset = {
   \'a'   : '#S',
@@ -136,8 +213,11 @@ let g:tmuxline_preset = {
   \'c'   : '#I #P',
   \'win' : '#I #W',
   \'cwin': '#I #W',
-  \'x'   : '#(battery Charging) #[fg=red]#(battery Discharging)',
+  \'x'   : '#(battery Charging) #[fg=#ffcb6b]#(battery Discharging)',
   \'y'   : '%a %d %b %R'}
+
+
+" Plugin specific {{{1
 
 "Vimwiki
 
