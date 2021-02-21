@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Taken from from https://github.com/richoH/dotfiles/blob/master/bin/battery
+# with some slight modifications
+
 HEART_FULL=♥
 HEART_EMPTY=♡
 [ -z "$NUM_HEARTS" ] &&
@@ -117,6 +120,6 @@ BATTERY_STATUS=`battery_status $1`
 if [ -n "$CUTE_BATTERY_INDICATOR" ]; then
     cutinate $BATTERY_STATUS
 else
-    echo ${BATTERY_STATUS}%
+    echo $HEART_FULL ${BATTERY_STATUS}%
 fi
 

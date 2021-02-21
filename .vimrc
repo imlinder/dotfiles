@@ -6,19 +6,16 @@ set nocompatible
 
 " Install plug.vim if it's not yet installed
 if empty( glob('~/.vim/autoload/plug.vim') )
-	!mkdir -p ~/.vim/autoload/
-	!curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  !mkdir -p ~/.vim/autoload/
+  !curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
 call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'itchyny/lightline.vim'
-Plug 'cocopon/lightline-hybrid.vim'
-"Plug 'edkolev/tmuxline.vim'
-"Use this fork until PR with support for termguicolors for lightline has been merged
-Plug 'hoov/tmuxline.vim', { 'branch': 'truecolor-lightline'}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
@@ -72,19 +69,22 @@ nmap <silent> gr <Plug>(coc-references)
 set directory=~/.vimswap
 
 if has("persistent_undo")
-	set undodir=~/.vimundo/
-	set undofile
+  set undodir=~/.vimundo/
+  set undofile
 endif
 
-" Syntax highligting {{{1
 
 "set cursorline    "Highlight current line
 "set cursorcolumn  "Highlight current column
 
 filetype plugin indent on
 
+set background=dark
+
 if exists('+termguicolors')
   set termguicolors
+  let ayucolor="mirage"
+  colorscheme ayu
 else
   set t_Co=256
 endif
@@ -93,13 +93,7 @@ if &t_Co > 2
   syntax on
 endif
 
-set background=dark
-let ayucolor="light"
-let ayucolor="mirage"
-
 if &t_Co >= 256
-  colorscheme ayu
-  let g:palenight_terminal_italics=1
 endif
 
 
@@ -120,7 +114,7 @@ set shiftwidth=4
 set listchars=tab:▸\ ,trail:· "Show all tabs, show trailing spaces
 set list
 
-	" netrw {{{1
+" netrw {{{1
 
 let g:netrw_banner = 0
 "let g:netrw_liststyle = 3
@@ -187,34 +181,29 @@ autocmd FileType vim setlocal foldmethod=marker
 
 " Status line {{{1
 
+" Custom statusline
+" -----------------
 set laststatus=2 "Always show statusline
 
-let g:lightline = { 
-	\'colorscheme': 'ayu',
-	\ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-	\ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
-\}
-"let g:lightline = { 'colorscheme': 'ayu' }
+set statusline=
 
-let g:tmuxline_preset = 'ayu'
+" Statusline left
+" Git branch
+set statusline+=%#PmenuSel#
+set statusline+=%#Pmenu#
+set statusline+=%{fugitive#statusline()}
+set statusline+=%r%m%h%w
+set statusline+=\ \%.30F
+set statusline+=\ %#StatusLine#
 
-if exists('$TMUX')
-	au InsertEnter * Tmuxline lightline_insert
-	au InsertLeave * Tmuxline lightline
-endif
-
-let g:tmuxline_powerline_separators = 0
-
-let g:tmuxline_status_justify = 'center'
-
-let g:tmuxline_preset = {
-  \'a'   : '#S',
-  \'b'   : '#W',
-  \'c'   : '#I #P',
-  \'win' : '#I #W',
-  \'cwin': '#I #W',
-  \'x'   : '#(battery Charging) #[fg=#ffcb6b]#(battery Discharging)',
-  \'y'   : '%a %d %b %R'}
+" Statusline right
+set statusline+=%=
+" File encoding
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+" Type of file
+set statusline+=\ %y
+" Percentage, line:column
+set statusline+=\ %p\%%\ %l:%c
 
 
 " Plugin specific {{{1
@@ -225,6 +214,6 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vim
 
 "Ack
 if executable('ag')
-	let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag --vimgrep'
 endif
 
