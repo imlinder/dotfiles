@@ -28,7 +28,6 @@ cask "hammerspoon"
 cask "iterm2"
 cask "slack"
 cask "spotify"
-cask "spotify"
 cask "transmit"
 
 cask "font-fira-code"
