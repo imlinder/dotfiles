@@ -55,6 +55,9 @@ set history=5000  "Increase history entries (default: 20)
 set nospell
 set spelllang=en
 
+set nofixendofline
+
+
 " coc {{{1
 let g:coc_global_extension = ['coc-git', 'coc-json', 'coc-tailwindcss', 'coc-tsserver', 'coc-phpls']
 
@@ -73,9 +76,19 @@ if has("persistent_undo")
   set undofile
 endif
 
+" Look and colors {{{1
 
 "set cursorline    "Highlight current line
 "set cursorcolumn  "Highlight current column
+
+function! AdjustAyu() abort
+  highlight VertSplit cterm=NONE ctermbg=NONE ctermfg=231 gui=NONE guibg=NONE guifg=##000000
+endfunction
+
+augroup MyColorAdjustments
+  autocmd!
+  autocmd ColorScheme ayu call AdjustAyu()
+augroup END
 
 filetype plugin indent on
 
@@ -113,6 +126,9 @@ set shiftwidth=4
 
 set listchars=tab:▸\ ,trail:· "Show all tabs, show trailing spaces
 set list
+
+" Yaml indentation
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " netrw {{{1
 
@@ -177,6 +193,7 @@ nnoremap * *<c-o>
 " Folding {{{1
 
 autocmd FileType vim setlocal foldmethod=marker
+autocmd FileType json setlocal foldmethod=syntax
 "au FileType javascript call JavaScriptFold()
 
 " Status line {{{1
@@ -207,6 +224,9 @@ set statusline+=\ %p\%%\ %l:%c
 
 
 " Plugin specific {{{1
+
+"CtrlP
+let g:ctrlp_custom_ignore = 'node_modules\|dist\|git'
 
 "Vimwiki
 
