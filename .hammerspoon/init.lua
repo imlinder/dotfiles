@@ -1,10 +1,7 @@
 -- Reload Hammerspoon
+hs.loadSpoon("ReloadConfiguration")
+spoon.ReloadConfiguration:start()
 hs.alert.show("Config reloaded")
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
-  hs.reload()
-end)
-
-hs.loadSpoon("ControlEscape"):start()
 
 -- https://github.com/scottwhudson/Lunette
 hs.loadSpoon("Lunette")
