@@ -59,7 +59,8 @@ set nofixendofline
 
 
 " coc {{{1
-let g:coc_global_extension = ['coc-git', 'coc-json', 'coc-tailwindcss', 'coc-tsserver', 'coc-phpls']
+let g:coc_global_extension = ['coc-git', 'coc-json', 'coc-tailwindcss', 'coc-css', 'coc-tsserver', 'coc-phpls']
+autocmd FileType scss setl iskeyword+=@-@
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
