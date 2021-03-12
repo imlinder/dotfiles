@@ -229,6 +229,13 @@ set statusline+=\ %p\%%\ %l:%c
 "CtrlP
 let g:ctrlp_custom_ignore = 'node_modules\|dist\|git'
 
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
+  \ 'PrtSelectMove("k")':   ['<c-p>', '<up>'],
+  \ 'PrtHistory(-1)':       ['<c-j>'],
+  \ 'PrtHistory(1)':        ['<c-k>'],
+    \ }
+
 "Vimwiki
 
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/', 'syntax': 'markdown', 'ext': '.md'}]
