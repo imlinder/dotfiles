@@ -16,3 +16,6 @@ Add `~/Library/KeyBindings/DefaultKeyBinding.dict` with
 ```
 
 ## Todo
+
+- Add https://github.com/tpope/vim-commentary
+- Automate install/sync of DefaultKeyBinding.dict
