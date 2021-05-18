@@ -34,6 +34,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'zaiste/tmux.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'tpope/vim-markdown'
+Plug 'nelsyeung/twig.vim'
 
 " Colorschemes
 Plug 'w0ng/vim-hybrid'
