@@ -15,4 +15,9 @@ if [ "$system_type" = "Darwin" ]; then
     brew bundle --global
   fi
 
+  if [ -d "$HOME/.config/hammerspoon" ]; then
+    echo "Setting Hammerspoon config location"
+	defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/.config/hammerspoon/init.lua"
+  fi
+
 fi
