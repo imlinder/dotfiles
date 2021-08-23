@@ -1,0 +1,39 @@
+env:
+  TERM: xterm-256color
+
+window:
+  decorations: none
+
+font:
+
+  normal:
+    family: FiraCode Nerd Font Mono
+    style: Regular
+
+  bold:
+    family: FiraCode Nerd Font Mono
+    style: Bold
+
+  size: 13.0
+
+  use_thin_strokes: true
+
+# Ayu mirage
+colors:
+  # Default colors
+  primary:
+    background: '#202734'
+    foreground: '#CBCCC6'
+
+  # Normal colors
+  normal:
+    #black:    '#191E2A'
+    black:    '#202734'
+    red:      '#FF3333'
+    green:    '#BAE67E'
+    yellow:   '#FFA759'
+    blue:     '#73D0FF'
+    magenta:  '#FFD580'
+    cyan:     '#95E6CB'
+    white:    '#C7C7C7'
+
