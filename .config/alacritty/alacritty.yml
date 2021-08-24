@@ -39,3 +39,6 @@ colors:
     cyan:     '#95E6CB'
     white:    '#C7C7C7'
 
+key_bindings:
+  - { key: Key6,     mods: Control, chars: "\x1b[94;5u" }
+
