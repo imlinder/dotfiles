@@ -4,6 +4,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 
 brew "bat"
+brew "fnm"
 brew "fzf"
 brew "git"
 brew "htop"
