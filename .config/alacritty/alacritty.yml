@@ -14,12 +14,18 @@ font:
   size: 13.0
   use_thin_strokes: true
 
+custom_cursor_colors: true
+
 # Ayu mirage
 colors:
   # Default colors
   primary:
     background: '#202734'
     foreground: '#CBCCC6'
+
+  cursor:
+    text: '#202734'
+    cursor: '#FFD580'
 
   # Normal colors
   normal:
