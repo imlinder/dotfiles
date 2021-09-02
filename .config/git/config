@@ -6,4 +6,5 @@
 	excludesfile = ~/.config/git/gitignore_global
 [merge]
 	tool = opendiff
-
+[pull]
+	ff = only
