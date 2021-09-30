@@ -10,19 +10,21 @@ endif
 set directory=~/.vimswap
 set nowrap
 set nu
-set signcolumn=number
+set signcolumn=yes
 set nospell
 set spelllang=en
 set nofixendofline
 
-set noexpandtab
+set expandtab
 set autoindent
 set smartindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
-set listchars=tab:▸\ ,trail:·,lead:· "Show all tabs, show trailing spaces
+set guicursor=i:block
+
+set listchars=tab:▸\ ,trail:· "Show all tabs, show trailing spaces
 set list
 
 set hlsearch "Highlight search pattern
@@ -79,7 +81,7 @@ let g:netrw_banner = 0
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " coc {{{1
-let g:coc_global_extension = ['coc-git', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-phpls', 'coc-explorer', 'coc-tailwindcss']
+let g:coc_global_extension = ['coc-git', 'coc-eslint', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-phpls', 'coc-explorer', 'coc-tailwindcss']
 autocmd FileType scss setl iskeyword+=@-@
 nnoremap <leader>o :CocCommand explorer<CR>
 
