@@ -42,8 +42,12 @@ customBindings = {
 	rightHalf = {
 		{{"cmd", "ctrl"}, "L"},
 	},
-	topHalf = false,
-	bottomHalf = false,
+	topHalf = {
+		{{"cmd", "ctrl", "alt"}, "K"},
+	},
+	bottomHalf = {
+		{{"cmd", "ctrl", "alt"}, "J"},
+	},
 	topLeft = {
 		{{"cmd", "ctrl"}, "K"},
 	},
@@ -65,10 +69,10 @@ customBindings = {
 	nextThird = false,
 	prevThird = false,
 	enlarge = {
-		{{ "cmd", "ctrl" }, "["}
+		{{ "cmd", "ctrl" }, "]"}
 	},
 	shrink = {
-		{{ "cmd", "ctrl" }, "]"}
+		{{ "cmd", "ctrl" }, "["}
 	},
 	undo = {
 		{{ "cmd", "ctrl"}, "Z"}
