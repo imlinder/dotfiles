@@ -81,9 +81,10 @@ let g:netrw_banner = 0
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " coc {{{1
-let g:coc_global_extension = ['coc-git', 'coc-eslint', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-phpls', 'coc-explorer', 'coc-tailwindcss']
+let g:coc_global_extension = ['coc-git', 'coc-eslint', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-phpls', 'coc-explorer', 'coc-tailwindcss', 'coc-prettier']
 autocmd FileType scss setl iskeyword+=@-@
 nnoremap <leader>o :CocCommand explorer<CR>
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
