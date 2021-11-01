@@ -1,0 +1,6 @@
+{
+	"tailwindCSS.headwind.runOnSave": true,
+	"tailwindCSS.trace.server": "verbose",
+	"explorer.icon.enableNerdfont": true,
+  "coc.preferences.formatOnSaveFiletypes": ["javascriptreact", "javascript"]
+}
