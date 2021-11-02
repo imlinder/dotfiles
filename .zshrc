@@ -87,6 +87,7 @@ cht() {
 }
 
 alias composer="php /usr/local/bin/composer.phar"
+alias masql=/Applications/MAMP/Library/bin/mysql
 
 export PATH="/usr/local/sbin:$PATH"
 

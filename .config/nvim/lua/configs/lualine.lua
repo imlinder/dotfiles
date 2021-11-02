@@ -18,11 +18,7 @@ require('lualine').setup {
 			'branch',
 			{
 				"diff",
-				colored = true,
-				color_added = colors.green,
-				color_removed = colors.red,
-				color_modified = colors.yellow,
-				symbols = {added = "+", modified = "~", removed = "-"},
+				colored = false,
 			},
 		},
 		lualine_c = {

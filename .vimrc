@@ -27,7 +27,7 @@ set guicursor=i:block
 set listchars=tab:▸\ ,trail:· "Show all tabs, show trailing spaces
 set list
 
-set hlsearch "Highlight search pattern
+set nohlsearch "Don't highlight search pattern
 set incsearch
 
 " Plugins {{{1
@@ -81,7 +81,7 @@ let g:netrw_banner = 0
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " coc {{{1
-let g:coc_global_extension = ['coc-git', 'coc-eslint', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-phpls', 'coc-explorer', 'coc-tailwindcss', 'coc-prettier']
+let g:coc_global_extensions = ['coc-git', 'coc-eslint', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-phpls', 'coc-explorer', 'coc-tailwindcss', 'coc-prettier']
 autocmd FileType scss setl iskeyword+=@-@
 nnoremap <leader>o :CocCommand explorer<CR>
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
