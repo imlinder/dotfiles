@@ -1,5 +1,5 @@
 {
-	"tailwindCSS.headwind.runOnSave": true,
+	"tailwindCSS.headwind.runOnSave": false,
 	"tailwindCSS.trace.server": "verbose",
 	"explorer.icon.enableNerdfont": true,
   "coc.preferences.formatOnSaveFiletypes": ["javascriptreact", "javascript"]

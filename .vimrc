@@ -42,6 +42,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'yaegassy/coc-tailwindcss', {'do': 'yarn install --frozen-lockfile', 'branch': 'feat/support-v3-and-use-server-pkg'}
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
@@ -81,10 +82,11 @@ let g:netrw_banner = 0
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " coc {{{1
-let g:coc_global_extensions = ['coc-git', 'coc-eslint', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-phpls', 'coc-explorer', 'coc-tailwindcss', 'coc-prettier']
+let g:coc_global_extensions = ['coc-git', 'coc-eslint', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-phpls', 'coc-explorer', 'coc-prettier']
 autocmd FileType scss setl iskeyword+=@-@
 nnoremap <leader>o :CocCommand explorer<CR>
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
