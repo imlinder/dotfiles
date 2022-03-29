@@ -4,7 +4,17 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.config/git/gitignore_global
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[mergetool]
+  prompt = true
 [merge]
-	tool = opendiff
+  tool = nvim
+[diff]
+  tool = nvim
 [pull]
-	ff = only
+  ff = only
+[tig "color"]
+	cursor = black yellow bold
+	title-blur = black blue
+	title-focus = black blue bold
