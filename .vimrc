@@ -145,16 +145,13 @@ imap <C-j> <CR><Esc>O
 "nnoremap <Leader>f za
 
 "Toggle line numbers
-nnoremap <Leader>nu :set nu!<Enter>
-
-"Fugitive
-nnoremap <leader>gs :Gstatus<CR>
+nnoremap <silent><Leader>nu :set nu!<Enter>
 
 "Toggle undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 
 " Edit/source vimrc
-nnoremap <leader>ev :tabnew $MYVIMRC<CR>
+nnoremap <silent><leader>ev :tabnew $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 "Expand Emmet

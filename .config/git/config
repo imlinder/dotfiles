@@ -18,3 +18,5 @@
 	cursor = black yellow bold
 	title-blur = black blue
 	title-focus = black blue bold
+[init]
+	defaultBranch = main

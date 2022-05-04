@@ -1,25 +1,30 @@
 require('telescope').setup {
-	extensions = {
-		fzf = {
-			fuzzy = true,
-			override_generic_sorter = false,
-			override_file_sorter = true,
-			case_mode = "smart_case",
-		}
-	},
-	defaults = {
-		layout_strategy = 'horizontal',
-		layout_config = {
-			horizontal = {
-				preview_width = 0.5,
-			}
-		}
-	}
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = false,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    }
+  },
+  defaults = {
+    layout_strategy = 'horizontal',
+    layout_config = {
+      horizontal = {
+        preview_width = 0.5,
+      }
+    }
+  },
+  mappings = {
+    i = {
+      ['<c-d>'] = require('telescope.actions').delete_buffer
+    }
+  },
 }
 
 require('telescope').load_extension('fzf')
 
-vim.api.nvim_set_keymap('n', '<c-p>',      '<cmd>lua require("telescope.builtin").find_files()<cr>',   { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<c-p>',      '<cmd>lua require("telescope.builtin").git_files()<cr>',    { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>lua require("telescope.builtin").find_files()<cr>',   { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<c-/>',      '<cmd>lua require("telescope.builtin").live_grep()<cr>',    { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>',    { noremap = true, silent = true })
