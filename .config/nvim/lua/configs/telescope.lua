@@ -33,4 +33,5 @@ vim.api.nvim_set_keymap('n', '<c-b>',      '<cmd>lua require("telescope.builtin"
 vim.api.nvim_set_keymap('n', '<Leader>fe', '<cmd>lua require("telescope.builtin").file_browser()<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>',    { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>ft', '<cmd>lua require("telescope.builtin").builtin()<cr>',      { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fd', '<cmd>lua require("telescope.builtin").diagnostics()<cr>',      { noremap = true, silent = true })
 
