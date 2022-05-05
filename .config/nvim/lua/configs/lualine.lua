@@ -9,7 +9,7 @@ local colors = {
 require('lualine').setup {
 	options = {
 		icons_enabled = false,
-		theme = 'ayu_mirage',
+		theme = 'auto',
 		component_separators = '',
 	},
 	sections = {

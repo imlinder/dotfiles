@@ -11,6 +11,7 @@ set signcolumn=yes
 set nospell
 set spelllang=en
 set nofixendofline
+set noshowmode
 
 set expandtab
 set autoindent
