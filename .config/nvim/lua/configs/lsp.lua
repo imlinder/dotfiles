@@ -1,9 +1,8 @@
 local lspconfig = require("lspconfig")
+local null_ls = require("null-ls")
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-local servers = { "tsserver", "tailwindcss", "intelephense" }
-
-
-local on_attach = function(client)
+local on_attach = function(client, bufnr)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
   vim.keymap.set("n", "gr", vim.lsp.buf.references, {buffer=0})
@@ -14,13 +13,40 @@ local on_attach = function(client)
   vim.keymap.set("n", "<Leader>dp", vim.diagnostic.goto_prev, {buffer=0})
 end;
 
+-- on_attach-function for tsserver to autoformat with prettier on save.
+local on_attach_typescript = function(client, bufnr)
+
+  -- Auto format on save
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.formatting_sync()
+      end,
+    })
+  end
+
+  -- Turn of formatting to use null-ls as default.
+  client.resolved_capabilities.document_formatting = false
+
+  return on_attach(client, bufnr)
+end;
+
 -- cmp capabilities
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+local servers = { "tsserver", "tailwindcss", "intelephense" }
+
+null_ls.setup({
+  sources = { null_ls.builtins.formatting.prettier },
+})
 
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities,
-    on_attach = on_attach
+    on_attach = lsp == 'tsserver' and on_attach_typescript or on_attach
   }
 end
 

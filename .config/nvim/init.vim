@@ -44,6 +44,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
