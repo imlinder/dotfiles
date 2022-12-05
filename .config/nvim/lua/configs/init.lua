@@ -1,8 +1,11 @@
 require("configs.colors")
 require("configs.git")
 require("configs.lsp")
+require("configs.cmp")
+require("configs.luasnip")
 require("configs.lualine")
 require("configs.nvim-tree")
 require("configs.telescope")
 require("configs.treesitter")
 
+require('Comment').setup()

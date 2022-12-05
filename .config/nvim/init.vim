@@ -20,6 +20,8 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+autocmd Filetype go setlocal noexpandtab
+
 set guicursor=i:block
 
 "Show all tabs, show trailing spaces
@@ -45,6 +47,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'lukas-reineke/lsp-format.nvim'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -54,10 +57,12 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
 
 " Snippets
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'rafamadriz/friendly-snippets'
 
 " Formatting
 Plug 'mhartington/formatter.nvim'
@@ -73,7 +78,9 @@ Plug 'mbbill/undotree'
 
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
+"Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
+Plug 'sagarrakshe/toggle-bool'
 " Plug 'Raimondi/delimitMate'
 Plug 'vimwiki/vimwiki'
 

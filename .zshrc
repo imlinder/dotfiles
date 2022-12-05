@@ -5,7 +5,10 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="avit"
+ZSH_THEME=""
+
+autoload -U promptinit; promptinit
+prompt pure
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -97,6 +100,7 @@ alias masql=/Applications/MAMP/Library/bin/mysql
 export PATH="/usr/local/sbin:$PATH"
 
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH=${PATH}:`go env GOPATH`/bin
 
 alias nvm="echo 'You switched to fnm, remember? 😜'"
 eval "$(fnm env)" # https://github.com/Schniz/fnm
