@@ -104,8 +104,9 @@ Plug 'zaiste/tmux.vim'
 Plug 'cormacrelf/dark-notify'
 
 " Colorschemes
-Plug 'ayu-theme/ayu-vim'
+" Plug 'ayu-theme/ayu-vim'
 Plug 'EdenEast/nightfox.nvim'
+Plug 'catppuccin/nvim', {'name': 'catppuccin'}
 
 call plug#end()
 
