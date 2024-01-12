@@ -31,7 +31,7 @@ lspconfig.tsserver.setup {
   end,
 }
 
-local servers = { "tailwindcss", "intelephense", "gopls" }
+local servers = { "tailwindcss", "intelephense", "gopls", "svelte" }
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities,

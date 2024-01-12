@@ -31,104 +31,13 @@ set list
 set nohlsearch "Don't highlight search pattern
 set incsearch
 
-" Plugins {{{1
-
-" Install plug.vim if it's not yet installed
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'christoomey/vim-tmux-navigator'
-
-" LSP
-Plug 'neovim/nvim-lspconfig'
-Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'lukas-reineke/lsp-format.nvim'
-
-" Treesitter
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" LSP Autocomplete
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-
-" Snippets
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'rafamadriz/friendly-snippets'
-
-" Formatting
-Plug 'mhartington/formatter.nvim'
-
-" File tree
-Plug 'kyazdani42/nvim-tree.lua'
-
-" Git
-Plug 'tpope/vim-fugitive'
-Plug 'lewis6991/gitsigns.nvim'
-
-Plug 'mbbill/undotree'
-
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-surround'
-"Plug 'tpope/vim-commentary'
-Plug 'numToStr/Comment.nvim'
-Plug 'sagarrakshe/toggle-bool'
-" Plug 'Raimondi/delimitMate'
-Plug 'vimwiki/vimwiki'
-
-" Telescope
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-
-" Lualine
-Plug 'hoob3rt/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-
-" Syntax
-Plug 'cakebaker/scss-syntax.vim'
-" Plug 'yuezk/vim-js'
-" Plug 'maxmellon/vim-jsx-pretty'
-Plug 'zaiste/tmux.vim'
-" Plug 'StanAngeloff/php.vim'
-" Plug 'nelsyeung/twig.vim'
-
-Plug 'cormacrelf/dark-notify'
-
-" Colorschemes
-" Plug 'ayu-theme/ayu-vim'
-Plug 'EdenEast/nightfox.nvim'
-Plug 'catppuccin/nvim', {'name': 'catppuccin'}
-
-call plug#end()
-
-" }}}
-
-lua require("configs")
+lua require("config")
 
 let g:netrw_banner = 0
 
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " Look and colors {{{1
-
-set background=dark
-
-if exists('+termguicolors')
-  set termguicolors
-  let ayucolor="mirage"
-  colorscheme nightfox
-else
-  set t_Co=256
-endif
 
 " Html syntax on ejs and handlebar files
 au BufNewFile,BufRead *.ejs set filetype=html
@@ -185,9 +94,6 @@ imap hh <C-y>,
 "Insert Datestamp
 inoremap <F5> <C-R>=strftime("%c")<CR>
 nnoremap <F5> "=strftime("%c")<CR>P
-
-"Save file as sudo even if not opened as such
-cmap w!! w !sudo tee > /dev/null %
 
 " Folding {{{1
 
