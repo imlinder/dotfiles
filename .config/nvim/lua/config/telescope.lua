@@ -26,7 +26,7 @@ require('telescope').setup {
 
 vim.api.nvim_set_keymap('n', '<c-p>',      '<cmd>lua require("telescope.builtin").git_files()<cr>',    { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>lua require("telescope.builtin").find_files()<cr>',   { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<c-/>',      '<cmd>lua require("telescope.builtin").live_grep()<cr>',    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fs', '<cmd>lua require("telescope.builtin").git_status()<cr>',    { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>',    { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>',      { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<c-b>',      '<cmd>lua require("telescope.builtin").buffers()<cr>',      { noremap = true, silent = true })

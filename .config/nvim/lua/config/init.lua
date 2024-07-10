@@ -26,3 +26,9 @@ require("config.treesitter")
 require('Comment').setup()
 
 require("mason").setup()
+
+vim.filetype.add({
+  extension = {
+    postcss = 'css',
+  }
+})

@@ -25,7 +25,42 @@ return {
   },
   'christoomey/vim-tmux-navigator',
   'williamboman/mason.nvim',
-  'https://github.com/github/copilot.vim',
+  -- 'https://github.com/github/copilot.vim',
+  {
+  "zbirenbaum/copilot.lua",
+    config = function()
+      require('copilot').setup({
+        panel = {
+          keymap = {
+            open = '<M-c>',
+          }
+        },
+        suggestion = {
+          auto_trigger = true,
+          keymap = {
+            accept = '<C-f>',
+          },
+        },
+        filetypes = {
+          gitcommit = true,
+        }
+      })
+    end,
+  },
+
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
+    dependencies = {
+      { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+    },
+    opts = {
+      debug = true, -- Enable debugging
+      -- See Configuration section for rest
+    },
+    -- See Commands section for default commands if you want to lazy load on them
+  },
 
   -- LSP
   'neovim/nvim-lspconfig',
@@ -90,5 +125,17 @@ return {
   --  'nelsyeung/twig.vim',
 
   -- 'cormacrelf/dark-notify',
+  {
+    'f-person/auto-dark-mode.nvim',
+    config = {
+      update_interval = 1000,
+      set_dark_mode = function()
+        vim.api.nvim_set_option("background", "dark")
+      end,
+      set_light_mode = function()
+        vim.api.nvim_set_option("background", "light")
+      end,
+    },
+  }
 
 }
