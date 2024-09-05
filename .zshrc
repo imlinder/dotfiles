@@ -99,9 +99,5 @@ alias masql=/Applications/MAMP/Library/bin/mysql
 
 export PATH="/usr/local/sbin:$PATH"
 
-export PATH="$HOME/.composer/vendor/bin:$PATH"
-export PATH=${PATH}:`go env GOPATH`/bin
-
-alias nvm="echo 'You switched to fnm, remember? 😜'"
 eval "$(fnm env)" # https://github.com/Schniz/fnm
 

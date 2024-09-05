@@ -20,12 +20,12 @@ return {
         }
       })
       vim.cmd("colorscheme kanagawa")
-      vim.opt.background = ""
     end,
   },
+
   'christoomey/vim-tmux-navigator',
   'williamboman/mason.nvim',
-  -- 'https://github.com/github/copilot.vim',
+
   {
   "zbirenbaum/copilot.lua",
     config = function()
@@ -91,16 +91,15 @@ return {
   -- Git
   'tpope/vim-fugitive',
   'lewis6991/gitsigns.nvim',
+  'seanbreckenridge/gitsigns-yadm.nvim',
 
   'mbbill/undotree',
 
   'mattn/emmet-vim',
   'tpope/vim-surround',
-  --Plug 'tpope/vim-commentary',
   'numToStr/Comment.nvim',
-  'sagarrakshe/toggle-bool',
-  -- Plug 'Raimondi/delimitMate',
   'vimwiki/vimwiki',
+  'jinh0/eyeliner.nvim',
 
   -- Telescope
   {
@@ -111,20 +110,19 @@ return {
     }
   },
 
+  {
+    "pschmitt/telescope-yadm.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+  },
+
   -- Lualine
   'hoob3rt/lualine.nvim',
   'kyazdani42/nvim-web-devicons',
 
   -- Syntax
-  'norcalli/nvim-colorizer.lua',
   'cakebaker/scss-syntax.vim',
-  --  'yuezk/vim-js',
-  --  'maxmellon/vim-jsx-pretty',
-  'zaiste/tmux.vim',
-  --  'StanAngeloff/php.vim',
-  --  'nelsyeung/twig.vim',
-
-  -- 'cormacrelf/dark-notify',
   {
     'f-person/auto-dark-mode.nvim',
     config = {

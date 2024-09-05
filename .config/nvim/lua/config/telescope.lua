@@ -23,6 +23,7 @@ require('telescope').setup {
 }
 
 -- require('telescope').load_extension('fzf')
+require('telescope').load_extension('yadm_files')
 
 vim.api.nvim_set_keymap('n', '<c-p>',      '<cmd>lua require("telescope.builtin").git_files()<cr>',    { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>lua require("telescope.builtin").find_files()<cr>',   { noremap = true, silent = true })
@@ -34,4 +35,5 @@ vim.api.nvim_set_keymap('n', '<Leader>fe', '<cmd>lua require("telescope.builtin"
 vim.api.nvim_set_keymap('n', '<Leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>',    { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>ft', '<cmd>lua require("telescope.builtin").builtin()<cr>',      { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fd', '<cmd>lua require("telescope.builtin").diagnostics()<cr>',      { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>fc", "<cmd>Telescope yadm_files <cr>", {noremap= true, silent = true})
 
