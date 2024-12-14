@@ -7,6 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME=""
 
+fpath+=($HOME/.zsh/pure)
 autoload -U promptinit; promptinit
 prompt pure
 
@@ -98,6 +99,4 @@ alias composer="php /usr/local/bin/composer.phar"
 alias masql=/Applications/MAMP/Library/bin/mysql
 
 export PATH="/usr/local/sbin:$PATH"
-
-eval "$(fnm env)" # https://github.com/Schniz/fnm
 
