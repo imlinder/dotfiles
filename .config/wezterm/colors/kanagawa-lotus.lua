@@ -5,7 +5,7 @@ return {
   background = "#f2ecbc",
 
   cursor_bg = "#43436c",
-  cursor_fg = "#43436c",
+  cursor_fg = "#f2ecbc",
   cursor_border = "#43436c",
 
   selection_fg = "#43436c",
