@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Based on https://gist.github.com/febuiles/1549991
-
-artist=`osascript -e'tell application "Spotify"' -e'get artist of current track' -e'end tell'`
-title=`osascript -e'tell application "Spotify"' -e'get name of current track' -e'end tell'`
-song=`curl -s --get "https://makeitpersonal.co/lyrics" --data-urlencode "artist=$artist" --data-urlencode "title=$title"`
-
-echo -e "$artist - $title\n$song" | less
