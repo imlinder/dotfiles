@@ -1,0 +1,10 @@
+font-family = "FiraCode Nerd Font Mono"
+
+theme = "dark:rose-pine-moon,light:rose-pine-dawn"
+
+mouse-hide-while-typing = true
+
+macos-icon = "custom-style"
+macos-icon-ghost-color = "#ffffff"
+macos-icon-screen-color = "#000000"
+macos-icon-frame = "plastic"
