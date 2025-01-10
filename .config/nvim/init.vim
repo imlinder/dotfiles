@@ -6,7 +6,7 @@ set undodir=~/.vimundo/
 set undofile
 set directory=~/.vimswap
 set nowrap
-set nu
+" set nu
 set signcolumn=yes
 set nospell
 set spelllang=en
@@ -34,8 +34,6 @@ set incsearch
 lua require("config")
 
 let g:netrw_banner = 0
-
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki/_html/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " Look and colors {{{1
 
@@ -69,8 +67,6 @@ nnoremap ]q :cnext<CR>
 nnoremap [q :cprevious<CR>
 nnoremap ]b :bnext<CR>
 nnoremap [b :bprevious<CR>
-nnoremap ]t :tabnext<CR>
-nnoremap [t :tabprevious<CR>
 
 "Toggle folds
 "nnoremap <Leader>f za
@@ -90,6 +86,10 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 
 "Expand Emmet
 imap hh <C-y>,
+
+" Fugitive
+nnoremap <leader>gs :Git<CR>
+" nnoremap <leader>gb :Git blame<CR>
 
 "Insert Datestamp
 inoremap <F5> <C-R>=strftime("%c")<CR>

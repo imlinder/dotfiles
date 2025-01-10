@@ -13,22 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
-require("config.colors")
-require("config.git")
-require("config.lsp")
-require("config.cmp")
-require("config.luasnip")
-require("config.lualine")
-require("config.nvim-tree")
-require("config.telescope")
-require("config.treesitter")
-
-require('Comment').setup()
-
-require("mason").setup()
-
 vim.filetype.add({
   extension = {
     postcss = 'css',
   }
 })
+
