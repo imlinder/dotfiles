@@ -39,6 +39,7 @@ return {
         tailwindcss = {},
         intelephense = {},
         gopls = {},
+        emmet_language_server = {},
       },
     },
 
