@@ -3,6 +3,5 @@ return {
   'mbbill/undotree',
   -- 'mattn/emmet-vim',
   'tpope/vim-surround',
-  'numToStr/Comment.nvim',
   'jinh0/eyeliner.nvim',
 }
