@@ -80,13 +80,6 @@ nnoremap <leader>u :UndotreeToggle<CR>
 "Toggle filetree
 nnoremap <silent><leader>o :NvimTreeToggle<CR>
 
-" Edit/source vimrc
-nnoremap <silent><leader>ev :tabnew $MYVIMRC<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
-
-"Expand Emmet
-imap hh <C-y>,
-
 " Fugitive
 nnoremap <leader>gs :Git<CR>
 " nnoremap <leader>gb :Git blame<CR>
