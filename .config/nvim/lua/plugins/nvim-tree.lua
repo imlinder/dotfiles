@@ -21,6 +21,9 @@ return {
         enable = true,
         update_cwd = true,
       },
-    }
+    },
+    init = function()
+      vim.keymap.set('n', '<leader>o', ':NvimTreeToggle<CR>')
+    end,
   }
 }

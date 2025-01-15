@@ -1,5 +1,10 @@
 return {
-  'tpope/vim-fugitive',
+  {
+    'tpope/vim-fugitive',
+    init = function()
+      vim.keymap.set('n', '<leader>gs', ':Git<CR>')
+    end
+  },
   {
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -11,11 +16,6 @@ return {
         local gitsigns = require("gitsigns")
 
         local function map(mode, l, r, opts)
-
-
-
-
-
           opts = opts or {}
           opts.buffer = bufnr
           vim.keymap.set(mode, l, r, opts)
